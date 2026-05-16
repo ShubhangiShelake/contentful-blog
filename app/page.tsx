@@ -22,11 +22,11 @@ export default async function Home() {
             quantum computing, and modern web
             development.
           </p>
-           <Link href="/blog">
-  <Button className="mt-6">
+              <Button asChild className="mt-6">
+  <Link href="/blog">
     Read Blogs
-  </Button>
-</Link>
+  </Link>
+</Button>
         </div>
       </section>
 
