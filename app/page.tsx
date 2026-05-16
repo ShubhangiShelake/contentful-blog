@@ -1,6 +1,7 @@
 export const revalidate = 60;
 import { Button } from "@/components/ui/button";
 import { getPosts } from "@/lib/blog";
+import Link from "next/link";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -21,10 +22,11 @@ export default async function Home() {
             quantum computing, and modern web
             development.
           </p>
-
-          <Button size="lg">
-            Read Blogs
-          </Button>
+           <Link href="/blog">
+  <Button className="mt-6">
+    Read Blogs
+  </Button>
+</Link>
         </div>
       </section>
 
