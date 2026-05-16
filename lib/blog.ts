@@ -6,13 +6,18 @@ export async function getPosts() {
   });
 
   return response.items.map((item: any) => ({
-    title: item.fields.title,
-    slug: String(item.fields.slug).trim(),
-    excerpt: item.fields.excerpt,
-    publishedDate: item.fields.publishedDate,
+    title: item.fields.title || "",
+    slug: String(item.fields.slug || "").trim(),
+    excerpt: item.fields.excerpt || "",
+    publishedDate: item.fields.publishedDate || "",
+
     coverImage:
-      "https:" + item.fields.featuredImage.fields.file.url,
-    content: item.fields.content,
+      item.fields.featuredImage?.fields?.file?.url
+        ? "https:" +
+          item.fields.featuredImage.fields.file.url
+        : "",
+
+    content: item.fields.content || null,
   }));
 }
 
@@ -23,7 +28,7 @@ export async function getPostBySlug(slug: string) {
 
   const item: any = response.items.find(
     (post: any) =>
-      String(post.fields.slug).trim() ===
+      String(post.fields.slug || "").trim() ===
       String(slug).trim()
   );
 
@@ -32,12 +37,17 @@ export async function getPostBySlug(slug: string) {
   }
 
   return {
-    title: item.fields.title,
-    slug: item.fields.slug,
-    excerpt: item.fields.excerpt,
-    publishedDate: item.fields.publishedDate,
+    title: item.fields.title || "",
+    slug: String(item.fields.slug || "").trim(),
+    excerpt: item.fields.excerpt || "",
+    publishedDate: item.fields.publishedDate || "",
+
     coverImage:
-      "https:" + item.fields.featuredImage.fields.file.url,
-    content: item.fields.content,
+      item.fields.featuredImage?.fields?.file?.url
+        ? "https:" +
+          item.fields.featuredImage.fields.file.url
+        : "",
+
+    content: item.fields.content || null,
   };
 }
