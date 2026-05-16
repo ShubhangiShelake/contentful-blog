@@ -4,14 +4,36 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 First, run the development server:
 
+`
+# Contentful Blog App
+
+A modern blog application built with Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, and Contentful CMS.
+
+## Features
+
+- Home page with hero section
+- Blog listing page
+- Dynamic blog detail pages
+- Contentful CMS integration
+- SEO metadata support
+- Responsive UI
+- Loading skeletons
+- ISR (Incremental Static Regeneration)
+
+## Tech Stack
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Contentful CMS
+
+## Setup
+
+Install dependencies:
+
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
